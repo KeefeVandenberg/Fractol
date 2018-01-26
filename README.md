@@ -4,6 +4,5 @@ This project is meant to create graphically beautiful fractals.
 ## Compile
   make re
   
-## run
+## Run
   ./fractol <mandelbrot/julia/burningship>
- 
