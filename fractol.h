@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:50:29 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 18:17:24 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:00:51 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,8 +137,10 @@ int					*thread_creator(t_env *j);
 void				mandelbrot_scale(t_env *e);
 void				mandelbrot(t_env *j);
 void				controls(t_env *j);
+void				controls_helper(t_env *j);
 
 void				burningship(t_env *j);
 void				burning_iter(t_burning *e);
+int					ft_printusage(void);
 
 #endif
