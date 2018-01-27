@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 17:51:48 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 19:09:26 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/01/27 13:57:58 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ t_trd		*enviroment_cpy(t_env *j)
 		e->previous_b = j->events->julia_b;
 	}
 	return (e);
+}
+
+int ft_printusage(void)
+{
+	ft_putstr("NOT VALID FRACTOL TYPE\n");
+	ft_putstr("./fractol <mandelbrot/julia/burningship>\n");
+	exit(1);
 }
