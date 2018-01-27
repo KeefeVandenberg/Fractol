@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:13:18 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 17:49:38 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/01/27 13:57:23 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ int			draw(t_env *e)
 	{
 		burningship(e);
 		controls(e);
+	}
+	if (e->fract == 0)
+	{
+		ft_printusage();
 	}
 	return (0);
 }
