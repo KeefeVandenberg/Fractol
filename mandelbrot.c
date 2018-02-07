@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 14:35:24 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 19:19:02 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/02/06 17:48:21 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,23 +80,22 @@ void		controls(t_env *j)
 
 void		controls_helper(t_env *j)
 {
-	char	*iter;
-
-	iter = ft_itoa(j->iter);
-	iter = ft_strjoin("iterations : ", iter);
-	mlx_string_put(j->mlx, j->window, 10, 0, 0xFFFFFF, iter);
-	mlx_string_put(j->mlx, j->window, 10,
-	20, 0xFFFFFF, "Add iterations PAGEUP");
-	mlx_string_put(j->mlx, j->window, 10,
-	40, 0xFFFFFF, "Minus iterations PAGEDOWN");
-	mlx_string_put(j->mlx, j->window,
-	10, 60, 0xFFFFFF, "Change color with HOME / END");
-	mlx_string_put(j->mlx, j->window, 10,
-	80, 0xFFFFFF, "Toggle Crosshair with F14\n");
-	mlx_string_put(j->mlx, j->window, 10, 100, 0xFFFFFF, "move up    ^\n");
-	mlx_string_put(j->mlx, j->window, 10, 120, 0xFFFFFF, "move down  v\n");
-	mlx_string_put(j->mlx, j->window, 10, 140, 0xFFFFFF, "move right >\n");
-	mlx_string_put(j->mlx, j->window, 10, 160, 0xFFFFFF, "move left  <\n");
-	mlx_string_put(j->mlx, j->window, 10,
-		180, 0xFFFFFF, "zoom in and out with W / S");
+	mlx_string_put(j->mlx, j->window, 0,
+		0, 0xFFFFFF, "* Add iterations PAGEUP         *");
+	mlx_string_put(j->mlx, j->window, 0,
+		20, 0xFFFFFF, "| Minus iterations PAGEDOWN     |");
+	mlx_string_put(j->mlx, j->window, 0,
+		40, 0xFFFFFF, "| Change color with HOME / END  |");
+	mlx_string_put(j->mlx, j->window, 0,
+		60, 0xFFFFFF, "| Toggle Crosshair with F14     |");
+	mlx_string_put(j->mlx, j->window, 0,
+		80, 0xFFFFFF, "| move up    ^                  |");
+	mlx_string_put(j->mlx, j->window, 0,
+		100, 0xFFFFFF, "| move down  v                  |");
+	mlx_string_put(j->mlx, j->window, 0,
+		120, 0xFFFFFF, "| move right >                  |");
+	mlx_string_put(j->mlx, j->window, 0,
+		140, 0xFFFFFF, "| move left  <                  |");
+	mlx_string_put(j->mlx, j->window, 0, 160,
+		0xFFFFFF, "* zoom in and out with W / S    *");
 }
