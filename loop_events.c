@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/20 14:33:55 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 19:12:04 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/02/03 16:38:19 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,20 @@ int			mouse_hook(int button, int x, int y, t_env *all)
 	int		shiftx;
 	int		shifty;
 
+	if (button == 5)
+		all->events->zoom -= (all->events->zoom / 10);
+	if (button == 4)
+		all->events->zoom += (all->events->zoom / 10);
 	all->events->intial_x = x;
 	all->events->intial_y = y;
-	if (all->fract == 2)
-		all->events->mouse = 1;
+	draw(all);
 	return (0);
 }
 
 int			motion_hook(int x, int y, t_env *all)
 {
-	if (all->events->mouse == 1 && x <=
-		WIDTH && y <= HEIGHT && y >= 0 && x >= 0 && all->fract == 2)
+	if (x <=
+		WIDTH - 1 && y <= HEIGHT - 1 && y >= 0 && x >= 0 && all->fract == 2)
 	{
 		all->events->julia_a = ((double)x / (WIDTH));
 		all->events->julia_b = ((double)y / (WIDTH));
@@ -65,9 +68,9 @@ int			hook_keydown(int k, t_env *all)
 		|| k == 123 || k == 124 || k == 35))
 	{
 		if (k == 13)
-			all->events->zoom -= (zoom / 99);
+			all->events->zoom -= (zoom / 10);
 		else if (k == 1)
-			all->events->zoom += .01 * zoom * 2;
+			all->events->zoom += zoom / 10;
 		else if (k == 125)
 			all->events->yshift += .01 * zoom * 2;
 		else if (k == 126)

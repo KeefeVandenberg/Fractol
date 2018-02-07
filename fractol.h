@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:50:29 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/27 14:00:51 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/02/06 15:29:28 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ double				magnitude(t_env *e);
 t_man				*square(t_man *man);
 void				add_thread(t_trd *all);
 t_trd				*square_thread(t_trd *all);
-t_trd				*enviroment_cpy(t_env *j);
 void				pixel_put_img(t_env *j, int x, int y, int color);
 void				add_julia_ab(t_trd *all, t_env *e);
 int					draw(t_env *e);
@@ -118,7 +117,7 @@ int					splitter(char *str, t_env *e);
 void				find_julia_ab(t_trd *all, t_env *e);
 
 t_env				*init_env(void);
-t_trd				*enviroment_cpy(t_env *j);
+t_trd				*environment_cpy(t_env *j);
 
 int					key_up(int keycode, t_env *e);
 int					key_down(int keycode, t_env *e);
@@ -132,7 +131,7 @@ void				*thread_1(void *j);
 void				*thread_2(void *j);
 void				*thread_3(void *j);
 void				*thread_4(void *j);
-int					*thread_creator(t_env *j);
+int					*thread_creator(t_env *e);
 
 void				mandelbrot_scale(t_env *e);
 void				mandelbrot(t_env *j);
@@ -142,5 +141,6 @@ void				controls_helper(t_env *j);
 void				burningship(t_env *j);
 void				burning_iter(t_burning *e);
 int					ft_printusage(void);
+void				ft_exit(t_env *all);
 
 #endif

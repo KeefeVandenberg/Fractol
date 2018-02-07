@@ -6,7 +6,7 @@
 #    By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/10 17:24:08 by kvandenb          #+#    #+#              #
-#    Updated: 2018/01/20 15:08:44 by kvandenb         ###   ########.fr        #
+#    Updated: 2018/02/06 17:51:41 by kvandenb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ all : $(name)
 
 $(name) :
 	@make -C GNL/libft/
-	$(cc) $(libx_flags) -g $(SRC) $(includes) -o $(name)
+	$(cc) $(libx_flags) $(SRC) $(includes) -o $(name)
 	@echo "Created Fractol executable"
 	
 clean:

@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 15:05:42 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 17:44:21 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/02/06 17:39:11 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void			burningship(t_env *j)
 				: pixel_put_img(j, e->px, e->py, e->n * j->man->color);
 		}
 	}
+	free(e);
 	mlx_put_image_to_window(j->mlx, j->window, j->image, 0, 0);
 }
 

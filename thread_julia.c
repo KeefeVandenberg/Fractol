@@ -6,7 +6,7 @@
 /*   By: kvandenb <kvandenb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 15:09:06 by kvandenb          #+#    #+#             */
-/*   Updated: 2018/01/25 19:21:07 by kvandenb         ###   ########.fr       */
+/*   Updated: 2018/02/06 17:39:46 by kvandenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		*thread_1(void *j)
 		}
 	}
 	free(all);
-	return (0);
+	return (NULL);
 }
 
 void		*thread_2(void *j)
@@ -61,7 +61,7 @@ void		*thread_2(void *j)
 		}
 	}
 	free(all);
-	return (0);
+	return (NULL);
 }
 
 void		*thread_3(void *j)
@@ -87,7 +87,7 @@ void		*thread_3(void *j)
 		}
 	}
 	free(all);
-	return (0);
+	return (NULL);
 }
 
 void		*thread_4(void *j)
@@ -113,20 +113,18 @@ void		*thread_4(void *j)
 		}
 	}
 	free(all);
-	return (0);
+	return (NULL);
 }
 
-int			*thread_creator(t_env *j)
+int			*thread_creator(t_env *e)
 {
-	t_env	*e;
 	int		i;
 
-	e = j;
 	i = 1;
-	pthread_create(&e->threads->thread[1], 0, thread_1, e);
-	pthread_create(&e->threads->thread[2], 0, thread_2, e);
-	pthread_create(&e->threads->thread[3], 0, thread_3, e);
-	pthread_create(&e->threads->thread[4], 0, thread_4, e);
+	pthread_create(&e->threads->thread[1], NULL, thread_1, e);
+	pthread_create(&e->threads->thread[2], NULL, thread_2, e);
+	pthread_create(&e->threads->thread[3], NULL, thread_3, e);
+	pthread_create(&e->threads->thread[4], NULL, thread_4, e);
 	while (i != 4)
 	{
 		pthread_join(e->threads->thread[i], NULL);
